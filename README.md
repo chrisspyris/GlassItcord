@@ -45,4 +45,4 @@ Menus and popups are automatically a bit more solid, so they stay readable.
 
 ## Author
 
-Made by **wolf4444**.
+Made by **wolf4444**, with a little help from my one and only colleague, [Claude](https://claude.ai) 🤖.
