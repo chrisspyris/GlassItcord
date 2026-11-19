@@ -2,7 +2,7 @@
  * @name GlassItcord
  * @author wolf4444
  * @authorId 161959938199912448
- * @version 1.0.3
+ * @version 1.0.2
  * @description A clean, minimal glass theme inspired by GlassIt-VSC. One setting makes all of Discord see-through, while text and avatars stay sharp.
 
  * Needs window transparency turned on in your mod (then restart Discord).
@@ -68,6 +68,7 @@ body,
 [class^="tileWrapper_"],
 [class^="videoFrame_"],
 [class*="childWrapperNoHoverBg_"],
+[class^="container_"]:has(> [class^="content_"] > [class^="artContainer_"]),
 [class^="container_"]:has(> [class^="content_"] > [class^="artContainer_"])::before,
 [class^="container_"]:has(> [class^="content_"] > [class^="artContainer_"])::after {
   background: transparent !important;
@@ -82,9 +83,4 @@ body,
 }
 [class^="sidebar_"]::after {
   display: none !important;
-}
-
-/* "Stream ended" screen: purple glow that fades into the glass */
-[class^="container_"]:has(> [class^="content_"] > [class^="artContainer_"]) {
-  background: radial-gradient(120% 90% at 75% 0%, rgb(110 70 170 / 0.45), transparent 70%) !important;
 }
