@@ -1,0 +1,83 @@
+/**
+ * @name GlassItcord
+ * @author wolf4444
+ * @authorId 161959938199912448
+ * @version 1.0.0
+ * @description A clean, minimal glass theme inspired by GlassIt-VSC. One setting makes all of Discord see-through, while text and avatars stay sharp.
+
+ * Needs window transparency turned on in your mod (then restart Discord).
+*/
+
+/* --glass: 0 = fully transparent, 1 = solid */
+:root {
+  --glass: 0.8;
+  --glass-tint: 0 0 0; /* R G B */
+
+  --g: rgb(var(--glass-tint) / var(--glass));
+  --gp: rgb(var(--glass-tint) / calc(var(--glass) + 0.4)); /* menus & popups */
+}
+
+/* Discord's colours: panels clear, glass painted once behind the app */
+:root,
+.theme-dark,
+.theme-darker,
+.theme-midnight,
+.theme-light {
+  --app-border-frame: transparent !important;
+  --background-base-lowest: transparent !important;
+  --background-base-lower: transparent !important;
+  --background-base-low: transparent !important;
+  --background-tertiary: transparent !important;
+  --background-secondary: transparent !important;
+  --background-secondary-alt: transparent !important;
+  --background-primary: transparent !important;
+  --bg-base-tertiary: transparent !important;
+  --bg-base-secondary: transparent !important;
+  --bg-base-primary: transparent !important;
+  --chat-background-default: transparent !important;
+  --channeltextarea-background: var(--g) !important;
+  --background-floating: var(--gp) !important;
+  --modal-background: var(--gp) !important;
+  --bg-surface-overlay: var(--gp) !important;
+  --bg-surface-raised: var(--gp) !important;
+  --background-surface-high: var(--gp) !important;
+  --background-surface-higher: var(--gp) !important;
+  --background-surface-highest: var(--gp) !important;
+}
+
+#app-mount,
+.vc-addon-card,
+.vc-settings-quickActions-pill {
+  background: var(--g) !important;
+}
+
+/* Clear areas Discord paints solid on its own */
+html,
+body,
+[class^="app_"],
+[class^="bg_"],
+[class^="layers_"],
+[class^="panels_"],
+[class^="panels_"] > *,
+[class^="standardSidebarView_"],
+[class^="sidebarRegion"],
+[class^="contentRegion"],
+:has(> [class^="callContainer_"]),
+[class^="callContainer_"],
+[class^="callContainer_"] [class^="root_"],
+[class^="tileWrapper_"],
+[class^="videoFrame_"],
+[class*="childWrapperNoHoverBg_"] {
+  background: transparent !important;
+}
+
+/* No divider lines or home-button outline */
+[class^="sidebar_"],
+[class^="sidebarList_"],
+[class*="childWrapperNoHoverBg_"] {
+  border: none !important;
+  box-shadow: none !important;
+}
+[class^="sidebar_"]::after {
+  display: none !important;
+}
